@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private LinearLayout linearLayout, linear2;
     private Button btnAdd, btnSub, btnEqual;
-    private EditText edttxt;
+
     private TextView txtAddition;
     private int Viewcount =0;
 
@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         linearLayout = findViewById(R.id.linearLayout);
         linear2 = findViewById(R.id.linear2);
 
-        edttxt = findViewById(R.id.editText);
         txtAddition = findViewById(R.id.txtAddition);
 
         btnAdd = findViewById(R.id.btnAdd);
@@ -41,12 +40,11 @@ public class MainActivity extends AppCompatActivity {
             EditText newEditText = new EditText(MainActivity.this);
 
             newEditText.setId(View.generateViewId());
-            newEditText.setText(edttxt.getText().toString());
+            newEditText.setText(txtAddition.getText().toString());
 
             linear2.addView(newEditText);
             Viewcount++;
 
-            edttxt.getText().clear();
         }
     }
 
